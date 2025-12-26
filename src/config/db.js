@@ -44,29 +44,31 @@ const getConfig = () => {
         userName: process.env.DB_USER,
         password: process.env.DB_PASSWORD
       }
-    },
-    options: {
-      database: process.env.DB_DATABASE,
-      encrypt: process.env.DB_ENCRYPT === 'true' || false,
-      trustServerCertificate: process.env.DB_TRUST_CERT === 'true' || true,
-      connectionTimeout: parseInt(process.env.DB_CONNECTION_TIMEOUT) || 30000,
-      requestTimeout: parseInt(process.env.DB_REQUEST_TIMEOUT) || 30000,
-      cancelTimeout: parseInt(process.env.DB_CANCEL_TIMEOUT) || 5000,
-      enableArithAbort: true,
-      enableConcatNullYieldsNull: true,
-      enableCursorCloseOnCommit: true,
-      enableImplicitTransactions: false,
-      enableNumericRoundabort: false,
-      enableQuotedIdentifier: true,
-      datefirst: 1,
-      dateFormat: 'dmy',
-      language: 'us_english',
-      port: parseInt(process.env.DB_PORT) || 1433,
-      instanceName: process.env.DB_INSTANCE || undefined,
-      useUTC: process.env.DB_USE_UTC === 'true' || false,
-      datefirst: parseInt(process.env.DB_DATEFIRST) || 1,
-      dateFormat: process.env.DB_DATE_FORMAT || 'dmy'
-    }
+    },options: {
+  database: process.env.DB_DATABASE,
+
+  encrypt: process.env.DB_ENCRYPT === 'true',
+  trustServerCertificate: process.env.DB_TRUST_CERT === 'true',
+
+  connectionTimeout: parseInt(process.env.DB_CONNECTION_TIMEOUT) || 30000,
+  requestTimeout: parseInt(process.env.DB_REQUEST_TIMEOUT) || 30000,
+  cancelTimeout: parseInt(process.env.DB_CANCEL_TIMEOUT) || 5000,
+
+  enableArithAbort: true,
+  enableConcatNullYieldsNull: true,
+  enableCursorCloseOnCommit: true,
+  enableImplicitTransactions: false,
+  enableNumericRoundabort: false,
+  enableQuotedIdentifier: true,
+
+  port: parseInt(process.env.DB_PORT) || 1433,
+  instanceName: process.env.DB_INSTANCE || undefined,
+  useUTC: process.env.DB_USE_UTC === 'true',
+
+  datefirst: parseInt(process.env.DB_DATEFIRST) || 1,
+  dateFormat: process.env.DB_DATE_FORMAT || 'dmy'
+}
+
   };
 };
 
