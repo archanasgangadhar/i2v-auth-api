@@ -6,14 +6,16 @@ exports.signup = async (req, res) => {
       full_name,
       email,
       password,
-      confirmPassword
+      confirmPassword,
+      role
     } = req.body;
 
     await authService.signup({
       fullName: full_name,   // ✅ IMPORTANT FIX
       email,
       password,
-      confirmPassword
+      confirmPassword,
+      role
     });
 
     res.status(201).json({ message: "Signup successful. Please login." });
